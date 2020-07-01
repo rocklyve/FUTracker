@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:FUTracker/ui/dashboard.dart';
+import 'package:FUTracker/ui/dashboard/dashboard.dart';
 import 'package:FUTracker/ui/profile.dart';
 import 'package:FUTracker/ui/settings.dart';
 import 'package:FUTracker/ui/team.dart';
@@ -47,7 +47,6 @@ class _HomeState extends State<Home> {
           ],
         ));
   }
-
   MaterialButton _buildTeamTabButton() {
     return MaterialButton(
         minWidth: 40,
@@ -61,7 +60,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
-              Icons.person,
+              Icons.people,
               color: currentTab == 1 ? Colors.blue : Colors.grey,
             ),
             Text('Team',
@@ -84,7 +83,7 @@ class _HomeState extends State<Home> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Icon(
-              Icons.people,
+              Icons.person,
               color: currentTab == 2 ? Colors.blue : Colors.grey,
             ),
             Text('Profile',
@@ -117,6 +116,7 @@ class _HomeState extends State<Home> {
           ],
         ));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

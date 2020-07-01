@@ -22,3 +22,5 @@ final kBoxDecorationStyle = BoxDecoration(
     ),
   ],
 );
+
+final appBarTextStyle = TextStyle(color: Colors.black, fontSize: 24.0);
