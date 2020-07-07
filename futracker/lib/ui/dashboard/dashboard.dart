@@ -15,15 +15,15 @@ class _DashboardState extends State<Dashboard> {
           SliverAppBar(
             title: Text("Dashboard"),
             automaticallyImplyLeading: false,
-            expandedHeight: 200,
+            expandedHeight: 40,
             actions: <Widget>[Icon(Icons.notifications)],
             bottom: PreferredSize(
-              preferredSize: Size.fromHeight(150),
+              preferredSize: Size.fromHeight(40),
               child: Container(),
             ),
             shape: RoundedRectangleBorder(
                 borderRadius:
-                    BorderRadius.vertical(bottom: Radius.circular(50))),
+                    BorderRadius.vertical(bottom: Radius.circular(30))),
           )
         ],
       ),

@@ -3,12 +3,33 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 
 final HttpLink _httpLink = HttpLink(uri: 'localhost:4000');
 
-final AuthLink _authLink = AuthLink(getToken: () async => 'Bearer asdf');
+final AuthLink _authLink =
+    AuthLink(getToken: () async => 'Bearer <YOUR_PERSONAL_ACCESS_TOKEN>');
 
 final Link _link = _authLink.concat(_httpLink);
 
-final GraphQLClient _client =
-    GraphQLClient(cache: InMemoryCache(), link: _link);
+ValueNotifier<GraphQLClient> _client = ValueNotifier(
+  GraphQLClient(
+    cache: InMemoryCache(),
+    link: _link,
+  ),
+);
+
+final String signUp = """
+mutation {
+  signup(name: "Toni", email: "Toni@prisma.io", password: "graphql") {
+    token
+  }
+}
+""";
+
+final String login = """
+mutation {
+  login(email: "katharina@prisma.io", password: "graphql") {
+    token
+  }
+}
+""";
 
 final String getAllWeekendLeagues = """
 query {
